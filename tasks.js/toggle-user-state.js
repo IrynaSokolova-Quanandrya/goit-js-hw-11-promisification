@@ -11,13 +11,14 @@ const users = [
 ];
 
 const toggleUserState = (allUsers, userName) => {
-  return new Promise((resolve, reject) => {
-    const updatedUsers = allUsers.map(user => {
-      user.name === userName ?
-        resolve({ ...user, active: !user.active }) :
-        reject(user,);
-    });
-  });
+    
+  const updatedUsers = allUsers.map(user =>
+  user.name === userName ? { ...user, active: !user.active } : user,
+  );
+
+  return new Promise((resolve) => {
+  resolve(updatedUsers);
+  })
 };
  
     const logger = updatedUsers => console.table(updatedUsers);
